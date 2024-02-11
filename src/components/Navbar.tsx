@@ -1,25 +1,15 @@
-
-
-
 import MobMenu from "./MobMenu";
 
 import { Bitcoin, Home, Landmark } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "./ui/Button";
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./ModeToggle";
 
-
-
-
-
-
 const navItems = [
-    { id: 1, title: "Home", url: "/Home" },
-    { id: 2, title: "Transaction", url: "/Transaction" },
-    { id: 3, title: "Data", url: "/Data" },
-    
-    
-  ];
+  { id: 1, title: "Home", url: "/Home" },
+  { id: 2, title: "Transaction", url: "/Transaction" },
+  { id: 3, title: "Data", url: "/Data" },
+];
 
 const Navbar = () => {
   return (
@@ -27,14 +17,14 @@ const Navbar = () => {
       <div className=" flex items-center justify-between w-full ">
         <div className=" flex flex-row items-center justify-start space-x-10 w-fit">
           <Link to="/" className="flex flex-row  items-center space-x-6">
-          
-            <span className={`  p-2 rounded-md text-md md:text-xl font-medium glow`}>React-Firebase</span>
+            <span
+              className={`  p-2 rounded-md text-md md:text-xl font-medium glow shadow-sm shadow-rose-100`}
+            >
+              React-Firebase
+            </span>
           </Link>
-          
-        <ModeToggle />
-      
-          
-          
+
+          <ModeToggle />
         </div>
         <div className="hidden lg:flex space-x-4">
           {navItems.map((item) => (
@@ -44,10 +34,9 @@ const Navbar = () => {
               key={item.id}
             >
               <div className="flex flex-row  justify-center items-center space-x-5">
-              
-              {item.title === "Home" && <Home className='glow'/>}
-                {item.title === "Transaction" && <Bitcoin  className='glow' />}
-                {item.title === "Data" && <Landmark className='glow'/> }
+                {item.title === "Home" && <Home className="glow" />}
+                {item.title === "Transaction" && <Bitcoin className="glow" />}
+                {item.title === "Data" && <Landmark className="glow" />}
                 <Button
                   className="  text-xl font-medium shadow-lg shadow-rose-400/50 "
                   variant="ghost"
@@ -59,7 +48,6 @@ const Navbar = () => {
           ))}
         </div>
         <div className="lg:hidden ">
-          
           <MobMenu />
         </div>
       </div>
