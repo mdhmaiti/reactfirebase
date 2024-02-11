@@ -16,7 +16,7 @@ import {
       errorElement: <ErrorPage />,
       children:[
         {
-          path: "/home",
+          path: "/Home",
           element: <Home/>,
           errorElement: <ErrorPage />,
         },

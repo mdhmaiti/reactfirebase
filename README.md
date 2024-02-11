@@ -1,4 +1,4 @@
-# React firebase app 
+# React firebase app
 
 Before updating anything make sure that the taiwind and other configuration is correct;
 Vite some times gives weird error like even you have configured the tailwind correctly, the actual changes sometimes does not work; So make sure to set the things up and deploy the first basic app tp vercel;
@@ -7,6 +7,13 @@ Vite some times gives weird error like even you have configured the tailwind cor
 
 1. Make the project structure I personally like to use the app.tsx as the home page and I define all the other pages in the pages folder; This allows me to easily manage different pages under the same hood .
 2. I installed the react router and configured that accouding to my likings; I made a seperate route folder which i use to manage different routes; It makes the main.tsx less cluttery;
+3. Made different routes every thing is working fine in the development but for the deployed version was giving the not found page error ; to fix the issue I made a ```vercel.json``` file in the root directory and used a script to fix the issue
+
+``` js
+{
+    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
+```
 
 ## React + TypeScript + Vite
 
@@ -38,4 +45,3 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-
