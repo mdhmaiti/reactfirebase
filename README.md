@@ -1,6 +1,7 @@
 # React firebase app 
 
-
+Before updating anything make sure that the taiwind and other configuration is correct;
+Vite some times gives weird error like even you have configured the tailwind correctly, the actual changes sometimes does not work; So make sure to set the things up and deploy the first basic app tp vercel;
 
 ## React + TypeScript + Vite
 
