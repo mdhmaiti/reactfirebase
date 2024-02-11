@@ -1,4 +1,6 @@
 import App from "@/App";
+import Data from "@/pages/Data";
+import Transaction from "@/pages/Transaction";
 import {
     createBrowserRouter,
    
@@ -9,4 +11,14 @@ import {
       path: "/",
       element: <App/>,
     },
+    {
+        path: "/Data",
+        element: <Data/>,
+      },
+      {
+        path: "/Transaction",
+        element: <Transaction/>,
+      },
+      
+    
   ]);
