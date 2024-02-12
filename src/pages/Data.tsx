@@ -10,7 +10,7 @@ type WalletData = {
 const Data = () => {
   const collectionRef = collection(dataBase, "wallet");
   const [List, setList] = useState<WalletData[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true); // Track loading state
+  const [isLoading, setIsLoading] = useState<boolean>(true); 
 
   const getWalletData = async () => {
     try {
@@ -28,10 +28,10 @@ const Data = () => {
       });
 
       setList(filteredData);
-      setIsLoading(false); // Set loading state to false when data fetching is complete
+      setIsLoading(false);
     } catch (error) {
       console.log(error, " there is error while getting the data");
-      setIsLoading(false); // Set loading state to false in case of error
+      setIsLoading(false); 
     }
   };
 
@@ -39,7 +39,7 @@ const Data = () => {
     getWalletData();
   }, []);
 
-  // Render loading state if isLoading is true
+
   if (isLoading) {
     return <div className="glow text-3xl mt-20">Loading...</div>;
   }
