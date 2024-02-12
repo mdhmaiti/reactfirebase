@@ -2,8 +2,9 @@ import { Outlet } from "react-router-dom";
 import "./App.css";
 
 import { ThemeProvider } from "./components/theme-provider";
-import Navbar from "./components/Navbar";
+
 import { Toaster } from "./components/ui/toaster";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
