@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className=" p-5 w-full fixed top-0 left-0 z-40 ">
       <div className=" flex items-center justify-between w-full ">
         <div className=" flex flex-row items-center justify-start space-x-10 w-fit">
-          <Link to="/" className="flex flex-row  items-center space-x-6">
+          <Link to="/Home" className="flex flex-row  items-center space-x-6">
             <span
               className={`  p-2 rounded-md text-md md:text-xl font-medium glow shadow-sm shadow-rose-100`}
             >
