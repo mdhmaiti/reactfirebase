@@ -16,6 +16,8 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 
 import { ethers } from "ethers";
+import { addDoc, collection } from "firebase/firestore";
+import { dataBase } from "@/config/firebase.config";
 
 const FormSchema = z.object({
   Amount: z.coerce
@@ -35,16 +37,30 @@ const Transaction = () => {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
+const collectionRef = collection(dataBase, "wallet");
+const onSubmit = async(data: z.infer<typeof FormSchema>)=> {
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
+  try {
+    await addDoc(collectionRef,{
+      Wallet_Address:data.Wallet_Address,
+      Amount: data.Amount,
+     
+  
+    })
+      toast({
+        title: "You submitted the following values:",
+        description: (
+          <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+            <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+          </pre>
+        ),
+      });
+    
+  } catch (error) {
+    console.log(error,"cannot submit");
+    
+  }
+
   }
 
   return (
