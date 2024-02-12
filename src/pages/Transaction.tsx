@@ -64,7 +64,7 @@ const onSubmit = async(data: z.infer<typeof FormSchema>)=> {
   }
 
   return (
-    <div className="mt-20 flex items-center justify-center shadow-md shadow-slate-500 rounded-md p-10">
+    <div className="mt-20 flex items-center justify-center shadow-md shadow-slate-500 rounded-md p-10 backdrop-blur-lg ">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

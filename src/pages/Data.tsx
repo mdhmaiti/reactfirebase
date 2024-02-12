@@ -45,17 +45,19 @@ const Data = () => {
   }
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 max-h-screen overflow-auto">
       {List.map((item, index) => {
         return (
-          <div key={index} className="flex justify-center my-8">
-            <div className="shadow-md shadow-slate-400 rounded-md overflow-hidden w-full md:w-5/6">
+     
+          <div key={index} className="flex justify-center my-8 ">
+            <div className="shadow-md shadow-slate-400 rounded-md overflow-hidden w-full md:w-5/6 backdrop-blur-2xl ">
               <div className="p-5 flex flex-col md:flex-row justify-between gap-3">
                 <p className="font-semibold overflow-auto glow ">Wallet Address:- {item.Wallet_Address || "Address not available"}</p>
                 <p className="font-semibold glow ">Amount:- {item.Amount}</p>
               </div>
             </div>
           </div>
+          
         );
       })}
     </div>
